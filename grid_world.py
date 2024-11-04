@@ -53,11 +53,9 @@ print(np.asarray(l))
 
 """>> Random in numpy"""
 
-# Array of Random integers ranging from 1 to 10 (with any size you want)
 a = np.random.randint(low=1, high=10, size=(5,2))
 print(a)
 
-# Array of random elements of a list with any size you want
 a = np.random.choice([0,1,2], size=(2,))
 
 """>> Shapes in numpy"""
@@ -66,7 +64,6 @@ a = np.random.randint(low=1, high=5, size=(4,2))
 print(a.shape)
 print(a)
 
-# Reshape a to a vector of shape = (8,1)
 a = a.reshape((8,1))
 print(a.shape)
 print(a)
@@ -206,7 +203,6 @@ def policy_initialization(n):
   # Define the possible actions (0: 'u', 1: 'r', 2: 'd', 3: 'l')
   actions = [0, 1, 2, 3]
 
-  # Initialize a random policy for each state
   pi = np.random.choice(actions, size=(n, n))
 
   return pi
@@ -257,10 +253,8 @@ def policy_int_to_char(n, pi):
     A grid of characters representing the policy.
   """
 
-  # Define a mapping from integers to characters
   action_map = {0: 'u', 1: 'r', 2: 'd', 3: 'l'}
 
-  # Convert the policy to characters
   pi_char = np.empty(shape=(n, n), dtype=str)
   for i in range(n):
     for j in range(n):
