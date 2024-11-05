@@ -28,18 +28,18 @@ def epsilon_greedy(Q, s, epsilon):
         return np.argmax(Q[s])
 
 if __name__ == "__main__":
-    env = gym.make("Taxi-v3", render_mode="human")
+    env = gym.make("Taxi-v3", render_mode="ansi")
 
     env.reset()
     env.render()
 
     Q = np.zeros([env.observation_space.n, env.action_space.n])
 
-    alpha = 0.01
-    gamma = 0.8
+    alpha = 0.1
+    gamma = 0.9
     epsilon = 0.2
-    n_epochs = 20
-    max_itr_per_epoch = 100
+    n_epochs = 1000
+    max_itr_per_epoch = 500
     rewards = []
 
     for e in range(n_epochs):
